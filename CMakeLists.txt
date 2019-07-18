@@ -10,6 +10,12 @@ install(PROGRAMS scripts/cpplint scripts/pep8 scripts/test_wrapper
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+if(WIN32)
+  install_python_cli(cpplint)
+  install_python_cli(pep8)
+  install_python_cli(test_wrapper)
+endif()
+
 install(DIRECTORY cmake
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
